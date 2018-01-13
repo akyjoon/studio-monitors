@@ -1,0 +1,42 @@
+<nav class="nav navbar-light navigation navigation--black">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon navigation_button"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item navigation_item navigation-black">
+        <a href="/" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" id="navbarDropdown" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Studio Monitors</a>
+        <div class="dropdown-menu navigation--black navigation--mt--bnone">
+          <a href="/monitors" class="dropdown-item navigation--hover">Browse Monitors</a>
+          {{#if user}}
+          <a href="/monitors/add" class="dropdown-item navigation--hover">Add Monitors</a>
+          {{/if}}
+        </div>
+      </li>
+      {{#unless user}}
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Register</a>
+        <div class="dropdown-menu navigation--black navigation--mt--bnone">
+          <a href="/auth/login" class="dropdown-item navigation--hover">Login</a>
+          <a href="/auth/register" class="dropdown-item navigation--hover">Register</a>
+        </div>
+      </li>
+      {{/unless}} {{#if user}}
+      <li class="nav-item">
+        <a href="/dashboard" class="nav-link">Dashboard</a>
+      </li>
+      <li class="nav-item navigation-black">
+        <a href="/auth/logout" class="nav-link">Log out</a>
+      </li>
+      <li class="nav-item">
+        <a href="/dashboard" class="nav-link">Hi {{user.username}}</a>
+      </li>
+      {{/if}}
+    </ul>
+  </div>
+</nav>
+

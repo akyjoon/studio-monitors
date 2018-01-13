@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Montserrat:400,700,900&subset=latin-ext');
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: #F56520;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.home-headline-setting {
+  
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.content-block {
+  margin: 3.5rem auto;
+}
+ul {
+  list-style: none;
+}
+.navigation {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+.navigation_button{
+  color: white;
+}
+.navigation a{
+  color: white;
+}
+.navigation--black {
+  background-color: #073868;
+}
+.navigation--mt--bnone {
+  margin: 0;
+  border: 0px;
+}
+.navigation--hover:hover {
+  background-color: #FFA275;
+}
+
+.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active{
+  background-color: #F56520;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+}
+.header {
+  background: url('https://wallpaperscraft.com/image/sound_recording_studio_equipment_92309_3840x2160.jpg') center no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 10rem 2rem;
+  margin-bottom: 8rem;
+  font-family: 'Montserrat', sans-serif;
+
+
+}
+.header_lead, .header_sublead {
+  letter-spacing: 1px;
+}
+.latest-monitor_card-wrapper {
+  margin-top: 30px;
+}
+.latest-monitor_card-block_title {
+  text-align: center;
+}
+.latest-monitor_card-block_footer {
+  background-color: white;
+}
+footer {
+  background-color: #1F609F;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+
+}
+
+.footer {
+  font-family: 'Lato', sans-serif;
+}
+
+.footer_contact {
+  line-height: 1.6rem;
+}
+
+.footer_title {
+  text-align: center;
+  color: #073868;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.footer_content {
+  color: #6091C0;
+}
+
+.footer_social {
+  text-align: center;
+}
+
+.footer_social i {
+  color: #F59E20;
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: .8rem;
+}
+
+.footer_copyright {
+  text-align: center;
+}
+.monitors {
+  -webkit-column-count: 6;
+          column-count: 6;
+}
+.monitors_element img {
+  display: block;
+  max-width: 200px;
+  margin: 0 auto;
+}
+.monitors_headline {
+  margin-top: 5rem;
+  width: 100%;
+}
+.form_margin {
+  margin: 10rem auto;
+}
+.dashboard_monitors {
+  -webkit-column-count: 4;
+          column-count: 4;
+}
+.monitor_button {
+  padding: .2rem .8rem;
+  border-radius: 0;
+}
+.monitor_edit {
+  background-color: #1F609F;
+}
+.show_monitor_img {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
+@media (min-width: 576px){
+  .show_monitor_img{
+    width: 250px;
+  }
+}
+@media (min-width: 768px){
+  .show_monitor_img{
+    width: 300px;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: relative;
+    position: absolute;
+  }
+}
+@media (min-width: 992px){
+  .show_monitor_img{
+    width: 350px;
+  }
+}
+.show_monitor_body {
+  margin-top: 3rem;
+}
+.show_monitor_body_desc {
+  line-height: 2rem;
+}

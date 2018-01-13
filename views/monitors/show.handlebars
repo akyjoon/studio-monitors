@@ -1,0 +1,64 @@
+<div class="container content-block show_monitor">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      {{#if monitor.imgurl}}
+      <img src="{{monitor.imgurl}}" alt="" class="show_monitor_img"> {{else}}
+      <p>No image to display</p>
+      {{/if}}
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="show_monitor_body">
+        <h5 class="show_monitor_body_title">
+          {{monitor.company}} {{monitor.model}}
+        </h5>
+        <hr class="my-2">
+        <div class="show_monitor_author">
+          <p>
+            <small>Added by
+              <a href="/monitors/user/{{user.id}}"> {{monitor.user.username}}</a>
+            </small>
+          </p>
+        </div>
+        <p class="show_monitor_body_desc">
+          {{monitor.description}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col mt-5">
+        <h4>Reviews</h4>
+      {{#each monitor.reviews}}
+      <div class="show_monitor_reviews mt-2">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title">{{reviewUser.username}}</h4>
+            <h6 class="card-subtitle mb-2 text-muted">{{formatDate reviewDate 'MMMM Do YYYY'}}</h6>
+            <p class="card-text">{{reviewBody}}</p>
+            <a href="#" class="card-link">Link</a>
+            <a href="#" class="card-link">Link2</a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="show_monitor_add-review mt-4">
+        <h4>Add Review</h4>
+        {{#if user}}
+        <form method="post" action="/monitors/review/{{monitor.id}}">
+          <div class="form-group">
+            <label for="review-textarea">Add Review</label>
+            <textarea name="reviewBody" id="review-textarea" class="form-control" rows="3"></textarea>
+          </div>
+          <button class="btn btn-primary">Submit</button>
+        </form>
+        {{else}}
+        <small><a href="/auth/login">Login</a> to add review</small>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

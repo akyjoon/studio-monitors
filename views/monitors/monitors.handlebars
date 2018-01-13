@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="monitors_headline">
+    <h4>Browse studio monitors</h4>
+  </div>
+
+  <div class="card-columns monitors content-block">
+    {{#each monitors}}
+    <div class="card monitors_element p-4">
+      {{#if imgurl}}
+      <a href="/monitors/show/{{id}}">
+        <img src="{{imgurl}}" alt="{{company}} {{model}}" class="card-img-top img-fluid">
+      </a> {{/if}}
+      <div class="card-body">
+        <a href="/monitors/show/{{id}}">
+          <h5 class="card-title mt-3">
+            {{company}} {{model}}
+          </h5>
+        </a>
+        <p class="card-text">
+          {{#if description}} {{truncate description 200}} {{/if}}
+          <hr class="my-2"> Added by <a href="/monitors/user/{{user.id}}"> {{user.username}}</a> on {{formatDate date 'YYYY-MM-DD'}}
+        </p>
+        <a href="/monitors/show/{{id}}">Read more</a>
+        <hr class="my-4">
+        <div class="mx-auto">
+          {{#if user}} {{{edit user.id ../user.id id}}} {{/if}}
+        </div>
+      </div>
+    </div>
+    {{else}}
+    <h1>No monitors to display</h1>
+    {{/each}}
+  </div>
+</div>

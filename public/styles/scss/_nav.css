@@ -1,0 +1,36 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  &_button{
+    color: white;
+  }
+  
+  & a{
+    color: white;
+  }
+  
+  &--black {
+    background-color: $ba-d1;
+  }
+
+  &--mt--bnone {
+    margin: 0;
+    border: 0px;
+  }
+  &--hover:hover {
+    background-color: $pc-l1;
+  }
+}
+
+.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active{
+  background-color: $primary-color;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+}
+
+
+

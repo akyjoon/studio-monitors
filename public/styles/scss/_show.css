@@ -1,0 +1,31 @@
+.show_monitor {
+  &_img {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    @mixin sm-up {
+      width: 250px;
+    }
+    @mixin md-up{
+      width: 300px;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: relative;
+      position: absolute;
+    }
+    @mixin lg-up {
+      width: 350px;
+    }
+  }
+  &_body {
+    margin-top: 3rem;
+
+  }
+
+  &_body_desc {
+    line-height: 2rem;
+  }
+}

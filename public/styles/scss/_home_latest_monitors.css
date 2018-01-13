@@ -1,0 +1,16 @@
+.latest-monitor {
+  &_card-wrapper {
+    margin-top: 30px;
+  }
+  &_card-block {
+    
+
+    &_title {
+      text-align: center;
+    }
+
+    &_footer {
+      background-color: white;
+    }
+  }
+}

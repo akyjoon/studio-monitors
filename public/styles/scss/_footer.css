@@ -1,0 +1,36 @@
+footer {
+  background-color: $blue-accent;
+  width: 100%;
+  font-family: $lato-font;
+
+}
+
+.footer {
+  font-family: $lato-font;
+  &_contact {
+    line-height: 1.6rem;
+  }
+  &_title {
+    text-align: center;
+    color: $ba-d1;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  &_content {
+    color: $ba-l1;
+  }
+  &_social {
+    text-align: center;
+
+    & i {
+      color: $yellow-accent;
+      display: inline-block;
+      font-size: 1.5rem;
+      padding: .8rem;
+    }
+  }
+
+  &_copyright {
+    text-align: center;
+  }
+}

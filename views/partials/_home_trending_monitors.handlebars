@@ -1,0 +1,30 @@
+  <div class="row">
+    <div class="latest-monitor content-block">
+      <h1 class="latest-monitor_headline home-headline-setting">Trending Monitors</h1>
+      <div class="latest-monitor_card-wrapper card-deck">
+        {{#each monitors}}
+        <div class="latest-monitor_card card p-2">
+          {{#if imgurl}}
+          <a href="/monitors/show/{{id}}">
+            <img src="{{imgurl}}" alt="{{company}} {{model}}" class="latest-monitor_card_img card-img-top w-100">
+          </a> {{/if}}
+          <div class="latest-monitor_card-block card-block">
+            <a href="/monitors/show/{{id}}">
+              <h5 class="latest-monitor_card-block_title card-title">
+                {{company}} {{model}}
+              </h5>
+            </a>
+            <p class="latest-monitor_card-block_text card-text">
+              <div class="latest-monitor_card-block_footer card-footer">
+                <small class="latest-monitor_card-block_footer_text text-muted">Added by <a href="/monitors/user/{{user.id}}">{{user.username}}</a> on {{ formatDate date 'YYYY-MM-DD'}}</small>
+              </div>
+            </p>
+          </div>
+        </div>
+        {{else}}
+        <h4>No monitors to display</h4>
+        {{/each}}
+
+      </div>
+    </div>
+  </div>

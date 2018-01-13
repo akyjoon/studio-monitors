@@ -1,0 +1,14 @@
+.header {
+  background: url('https://wallpaperscraft.com/image/sound_recording_studio_equipment_92309_3840x2160.jpg') center no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 10rem 2rem;
+  margin-bottom: 8rem;
+  font-family: $mont-font;
+
+  &_lead, &_sublead {
+    letter-spacing: 1px;
+  }
+
+
+}

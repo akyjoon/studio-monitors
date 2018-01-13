@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Montserrat:400,700,900&subset=latin-ext');
+
+$lato-font: 'Lato', sans-serif;
+$mont-font: 'Montserrat', sans-serif;
+
+$primary-color: #F56520;
+$yellow-accent: #F59E20;
+$blue-accent: #1F609F;
+$green-accent: #15A472;
+
+
+$pc-l1: #FFA275;
+$pc-l2: #FF864C;
+$pc-d1: #CA4607;
+$pc-d2: #A03400;
+
+$ba-l1: #6091C0;
+$ba-d1: #073868;
+
+

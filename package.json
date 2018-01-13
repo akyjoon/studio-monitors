@@ -9,10 +9,33 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.6.0",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0-alpha.6",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
+    "express-flash": "0.0.2",
     "express-handlebars": "^3.0.0",
+    "express-session": "1.10.1",
     "method-override": "^2.3.10",
-    "mongoose": "^5.0.0-rc1"
+    "moment": "^2.20.1",
+    "mongoose": "^5.0.0-rc1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "browser-sync": "^2.23.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-postcss": "^6.1.1",
+    "gulp-watch": "^4.3.5",
+    "postcss-import": "7.0.0",
+    "postcss-mixins": "^4.0.2",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^1.2.0"
   }
 }

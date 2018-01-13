@@ -1,0 +1,7 @@
+.monitor_button {
+  padding: .2rem .8rem;
+  border-radius: 0;
+}
+.monitor_edit {
+  background-color: $blue-accent;
+}

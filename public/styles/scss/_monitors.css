@@ -1,0 +1,13 @@
+.monitors {
+  column-count: 6;
+  &_element img {
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  &_headline {
+    margin-top: 5rem;
+    width: 100%;
+  }
+}
