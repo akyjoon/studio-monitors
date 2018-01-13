@@ -39,9 +39,11 @@ app.set('view engine', 'handlebars');
 //Set bodyParser
 app.use(bodyParser.urlencoded({extended: true}))
 
+//Db config
+const db = require('./config/database')
 //Set Mongoose
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://akyjoon:Qangelo1232@ds151451.mlab.com:51451/monitors')
+mongoose.connect(db.mongoURI)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err))
 
@@ -102,7 +104,7 @@ app.get('/', (req, res) => {
 
 
 //Listen Port
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`listening on port ${port}`)
 })
