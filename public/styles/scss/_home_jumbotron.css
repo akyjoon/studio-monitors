@@ -3,12 +3,26 @@
   background-size: cover;
   color: white;
   padding: 10rem 2rem;
-  margin-bottom: 8rem;
+  margin-bottom: 2rem;
   font-family: $mont-font;
 
+  &_title, &_lead, &_sublead {
+    text-align: center;
+  }
+  &_title {
+    font-size: 2rem;
+  }
   &_lead, &_sublead {
     letter-spacing: 1px;
   }
-
-
 }
+
+  @mixin md-up {
+    .header {
+      margin-bottom: 5rem;
+      
+      &_title, &_lead, &_sublead {
+      text-align: left;
+      }
+    }
+  }

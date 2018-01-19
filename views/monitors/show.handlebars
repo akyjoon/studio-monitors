@@ -8,14 +8,14 @@
     </div>
     <div class="col-12 col-md-6">
       <div class="show_monitor_body">
-        <h5 class="show_monitor_body_title">
+        <h5 class="show_monitor_body_title" id="monitorName">
           {{monitor.company}} {{monitor.model}}
         </h5>
         <hr class="my-2">
         <div class="show_monitor_author">
           <p>
             <small>Added by
-              <a href="/monitors/user/{{user.id}}"> {{monitor.user.username}}</a>
+              <a href="/monitors/user/{{monitor.user.id}}"> {{monitor.user.username}}</a>
             </small>
           </p>
         </div>
@@ -25,6 +25,7 @@
       </div>
     </div>
   </div>
+    <ul id="api"></ul>
   <div class="row">
     <div class="col mt-5">
         <h4>Reviews</h4>

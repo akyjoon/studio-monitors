@@ -1,5 +1,6 @@
 * {
   font-family: $mont-font;
+  box-sizing: border-box;
 }
 
 a {

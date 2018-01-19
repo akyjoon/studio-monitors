@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900|Montserrat:400,700,900&subset=latin-ext');
 * {
   font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
 }
 
 a {
@@ -29,46 +30,215 @@ ul {
   top: 0;
   z-index: 1000;
   width: 100%;
+  background-color: #6091C0;
 }
-.navigation_button{
+@media (min-width: 768px){
+  .navigation{
+    height: 50px;
+    background-color: #1F609F;
+  }
+}
+.navigation a {
+  padding: 12.8px 16px;
+}
+.navigation_mobile-button {
+  display: block;
+  position: relative;
+  background-color: #A03400;
+  height: 50px;
+  width: 50px;
+}
+@media (min-width: 768px){
+  .navigation_mobile-button{
+    display: none;
+  }
+}
+.navigation_mobile-button_upper-line {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+.navigation_mobile-button_upper-line--x {
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 37px;
+  left: 12px;
+}
+.navigation_mobile-button_middle-line {
+  content: "";
+  opacity: 1;
+  transition: opacity .5s;
+  position: absolute;
+  top: 23px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+}
+.navigation_mobile-button_middle-line--x {
+  opacity: 0;
+}
+.navigation_mobile-button_bottom-line {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+.navigation_mobile-button_bottom-line--x {
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  width: 37px;
+  left: 12px;
+}
+.navigation_wrapper {
+  display: none;
+}
+@media (min-width: 768px){
+  .navigation_wrapper{
+    display: block;
+  }
+}
+.navigation_wrapper--show {
+  display: block;
+}
+.navigation_mobile-button:active {}
+.navigation a {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+@media (min-width: 768px){
+  .navigation a{
+    width: auto;
+  }
+}
+.navigation_dropdown {
+  display: block;
+  float: left;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+}
+@media (min-width: 768px){
+  .navigation_dropdown{
+    width: auto;
+    text-align: left;
+  }
+}
+.navigation_dropdown_sub {
+  border: none;
+  outline: none;
   color: white;
+  padding: 12.8px 16px;
+  background-color: inherit;
 }
-.navigation a{
-  color: white;
+.navigation_dropdown_sub-menu {
+  // position: absolute;
+  height: 0;
+  width: 100%;
+  z-index: 1;
 }
-.navigation--black {
-  background-color: #073868;
+@media (min-width: 768px){
+  .navigation_dropdown_sub-menu{
+    min-width: 160px;
+  }
 }
-.navigation--mt--bnone {
-  margin: 0;
-  border: 0px;
+.navigation_dropdown_sub-menu a {
+  height: 0;
+  float: none;
+  color: black;
+  text-align: center;
+  background-color: #1F609F;
+  display:block;
+  padding: 0;
 }
-.navigation--hover:hover {
-  background-color: #FFA275;
-}
-
-.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active{
+.navigation_dropdown_sub-menu a:hover {
   background-color: #F56520;
 }
-
-.nav-pills .nav-link {
-  border-radius: 0;
+@media (min-width: 768px){
+  .navigation_dropdown_sub-menu a{
+    width: 200px;
+  }
+}
+.navigation_dropdown:hover .navigation_dropdown_sub-menu {
+  height:auto;
+}
+.navigation_dropdown:hover .navigation_dropdown_sub-menu a {
+  border-bottom: 2px solid #073868;
+  padding: 12px 16px;
+  height: 48.2px;
+  transition: height .5s ease-out,padding .5s;
+}
+.navigation--hover-color:hover {
+  background-color: #F56520;
 }
 .header {
   background: url('https://wallpaperscraft.com/image/sound_recording_studio_equipment_92309_3840x2160.jpg') center no-repeat;
   background-size: cover;
   color: white;
   padding: 10rem 2rem;
-  margin-bottom: 8rem;
+  margin-bottom: 2rem;
   font-family: 'Montserrat', sans-serif;
-
-
+}
+.header_title, .header_lead, .header_sublead {
+  text-align: center;
+}
+.header_title {
+  font-size: 2rem;
 }
 .header_lead, .header_sublead {
   letter-spacing: 1px;
 }
+
+  @media (min-width: 768px){
+  .header{
+    margin-bottom: 5rem;
+  }
+  .header_title, .header_lead, .header_sublead{
+    text-align: left;
+  }
+}
+.latest-monitor {
+  -webkit-column-count: 1;
+          column-count: 1;
+}
 .latest-monitor_card-wrapper {
   margin-top: 30px;
+}
+@media (min-width: 576px){
+  .latest-monitor_card{
+    margin-right: 2px !important;
+    margin-left: 2px !important;
+    margin-top: .5rem;
+  }
+}
+.latest-monitor_card_img {
+  display: block;
+  margin: 0 auto;
+  max-width: 120px;
 }
 .latest-monitor_card-block_title {
   text-align: center;

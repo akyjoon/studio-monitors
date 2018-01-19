@@ -1,6 +1,19 @@
 .latest-monitor {
+  column-count: 1;
   &_card-wrapper {
     margin-top: 30px;
+  }
+  &_card {
+    @mixin sm-up {
+    margin-right: 2px !important;
+    margin-left: 2px !important;
+    margin-top: .5rem;
+    }
+  }
+  &_card_img {
+    display: block;
+    margin: 0 auto;
+    max-width: 120px;
   }
   &_card-block {
     

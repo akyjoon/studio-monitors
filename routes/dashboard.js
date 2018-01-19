@@ -1,11 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const path = require('path')
 const async = require('async');
+const fs = require('fs');
+const multer  = require('multer');
+const bodyParser = require('body-parser');
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({extended: true}))
 
 //Load Monitor model
 require('../models/Monitors');
 const Monitor = mongoose.model('monitors');
+require('../models/User');
+const User = mongoose.model('users');
 
 //Get Dashboard my monitors tab
 router.get('/', function(req, res, next) {
@@ -26,6 +35,33 @@ router.get('/', function(req, res, next) {
         });
       });
 
+})
+//set multer for profile image storage
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/img')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+ 
+var upload = multer({ storage: storage })
+
+//add profile image for a user
+router.put('/avatar/:id', upload.single('avatar'), (req, res, next) => {
+
+  User.findOne({
+    _id: req.params.id
+  })
+    .then(user => {
+      user.avatar = req.file.originalname
+
+      user.save()
+        .then(user => {
+          res.redirect('/')
+        })
+    })
 })
 
 // router.get('/my-reviews', (req,res,next) => {

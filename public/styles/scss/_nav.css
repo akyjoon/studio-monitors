@@ -3,34 +3,161 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  &_button{
-    color: white;
+  background-color: $ba-l1;
+  @mixin md-up {
+  height: 50px;
+  background-color: $blue-accent;
   }
-  
-  & a{
-    color: white;
-  }
-  
-  &--black {
-    background-color: $ba-d1;
+  & a {
+    padding: 12.8px 16px;
   }
 
-  &--mt--bnone {
-    margin: 0;
-    border: 0px;
+
+  &_mobile-button {
+    display: block;
+    position: relative;
+    background-color: $pc-d2;
+    height: 50px;
+    width: 50px;
+    @mixin md-up {
+      display: none;
+    }
+
+    &_upper-line {
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      transition: transform .5s;
+      &--x {
+        transform-origin: left bottom;
+        transform: rotate(45deg);
+        width: 37px;
+        left: 12px;
+      }
+    }
+    &_middle-line {
+      content: "";
+      opacity: 1;
+      transition: opacity .5s;
+      position: absolute;
+      top: 23px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      &--x {
+        opacity: 0;
+      }
+    }
+    &_bottom-line {
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      width: 30px;
+      height: 3px;
+      background-color: #fff;
+      transition: transform .5s;
+      &--x {
+        transform-origin: left top;
+        transform: rotate(-45deg);
+        width: 37px;
+        left: 12px;
+      }
+    }
   }
-  &--hover:hover {
-    background-color: $pc-l1;
+  &_wrapper {
+    display: none;
+    @mixin md-up {
+      display: block;
+    }
+  }
+  &_wrapper--show {
+    display: block;
+  }
+  &_mobile-button:active {
+
+  }
+
+  & a {
+    width: 100%;
+    
+    float: left;
+    text-align: center;
+    @mixin md-up {
+      width: auto;
+    }
+  }
+
+  &_dropdown {
+    display: block;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    @mixin md-up {
+      width: auto;
+      text-align: left;
+    }
+
+    &_sub {
+      border: none;
+      outline: none;
+      color: white;
+      padding: 12.8px 16px;
+      background-color: inherit;
+    }
+
+    &_sub-menu {
+      // position: absolute;
+      height: 0;
+      width: 100%;
+      z-index: 1;
+      @mixin md-up {
+      min-width: 160px;
+
+      }
+
+      & a {
+        height: 0;
+        float: none;
+        color: black;
+        text-align: center;
+        background-color: $blue-accent;
+        display:block;
+        padding: 0;
+        &:hover {
+          background-color: $primary-color;
+        }
+        @mixin md-up {
+          width: 200px;
+        }
+      }
+    }
+    &:hover &_sub-menu {
+      height:auto;
+    }
+
+    &:hover &_sub-menu a {
+      border-bottom: 2px solid $ba-d1;
+      padding: 12px 16px;
+      height: 48.2px;
+      transition: height .5s ease-out,padding .5s;
+    }
+  }
+
+
+  &--hover-color:hover {
+    background-color: $primary-color;
   }
 }
-
-.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active{
-  background-color: $primary-color;
-}
-
-.nav-pills .nav-link {
-  border-radius: 0;
-}
-
-
-

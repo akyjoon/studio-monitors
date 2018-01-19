@@ -3,6 +3,8 @@
     <h4>Browse studio monitors</h4>
   </div>
 
+
+
   <div class="card-columns monitors content-block">
     {{#each monitors}}
     <div class="card monitors_element p-4">
@@ -18,7 +20,8 @@
         </a>
         <p class="card-text">
           {{#if description}} {{truncate description 200}} {{/if}}
-          <hr class="my-2"> Added by <a href="/monitors/user/{{user.id}}"> {{user.username}}</a> on {{formatDate date 'YYYY-MM-DD'}}
+          <hr class="my-2"> Added by
+          <a href="/monitors/user/{{user.id}}"> {{user.username}}</a> on {{formatDate date 'YYYY-MM-DD'}}
         </p>
         <a href="/monitors/show/{{id}}">Read more</a>
         <hr class="my-4">

@@ -14,8 +14,12 @@ const flash = require('connect-flash');
 
 const app = express();
 
+
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('uploads'));
+
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
+app.use(express.static(__dirname + '/node_modules/babel-polyfill/'))
 //Load model
 require('./models/Monitors');
 const Monitor = mongoose.model('monitors')
@@ -37,6 +41,7 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 //Set bodyParser
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
 
 //Db config

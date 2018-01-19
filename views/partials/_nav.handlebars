@@ -1,3 +1,48 @@
+<nav class="navigation navigation--dark">
+  <div class="navigation_mobile-button">
+    <div class="navigation_mobile-button_upper-line">
+    </div>
+    <div class="navigation_mobile-button_middle-line">
+    </div>
+    <div class="navigation_mobile-button_bottom-line">
+    </div>
+  </div>
+  <div class="navigation_wrapper">
+    <a href="/" class="navigation_primary navigation--hover-color">Home</a>
+    <div class="navigation_dropdown navigation--hover-color">
+      <button class="navigation_dropdown_sub">Studio Monitors
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="navigation_dropdown_sub-menu">
+        <a href="/monitors">Browse Monitors</a>
+        {{#if user}}
+        <a href="/monitors/add">Add Monitors</a>
+        {{/if}}
+      </div>
+    </div>
+    {{#unless user}}
+    <div class="navigation_dropdown navigation--hover-color">
+      <button class="navigation_dropdown_sub">Login/Register
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="navigation_dropdown_sub-menu">
+        <a href="/auth/login">Login</a>
+        <a href="/auth/register">Register</a>
+      </div>
+    </div>
+    {{/unless}} 
+    {{#if user}}
+    <a href="/dashboard" class="navigation_primary navigation--hover-color">Dashboard</a>
+    <a href="/auth/logout" class="navigation_primary navigation--hover-color">Log out</a>
+    <a href="/dashboard" class="navigation_primary navigation--hover-color">Hi {{user.username}}</a>
+    {{/if}}
+  </div>
+</nav>
+
+
+
+
+{{!--
 <nav class="nav navbar-light navigation navigation--black">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -9,7 +54,8 @@
         <a href="/" class="nav-link">Home</a>
       </li>
       <li class="nav-item dropdown">
-        <a href="#" id="navbarDropdown" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Studio Monitors</a>
+        <a href="#" id="navbarDropdown" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+          aria-expanded="false">Studio Monitors</a>
         <div class="dropdown-menu navigation--black navigation--mt--bnone">
           <a href="/monitors" class="dropdown-item navigation--hover">Browse Monitors</a>
           {{#if user}}
@@ -38,5 +84,4 @@
       {{/if}}
     </ul>
   </div>
-</nav>
-
+</nav> --}}

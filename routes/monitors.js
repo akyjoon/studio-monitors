@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
+
+
 //Load Model
 require('../models/Monitors');
 const Monitor = mongoose.model('monitors');
@@ -87,7 +89,7 @@ router.get('/show/:id', (req, res) => {
       })
     })
 })
-//show users monitors
+//show users profile
 router.get('/user/:userId', (req,res) => {
   Monitor.find({
     user: req.params.userId
