@@ -1,5 +1,8 @@
 # studio-monitors
 CRUD practice on studio monitors app
+
+You can view this work in progress app here: http://www.studiomonitors.review/
+
 My side project learning fullstack using:
 1. Node,
 2. Express,
@@ -19,3 +22,4 @@ This is my side project that lets users:
 8. buy studio monitor via Ebay API, (not available yet)
 9. view youtube videos related to the specific studio monitor via Youtube data API (not available yet)
 
+You can view this work in progress app here: http://www.studiomonitors.review/
