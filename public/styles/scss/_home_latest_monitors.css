@@ -1,9 +1,15 @@
 .latest-monitor {
   column-count: 1;
+  @mixin md-up {
+    column-count: 1;
+  }
   &_card-wrapper {
     margin-top: 30px;
   }
   &_card {
+    @mixin xs-down {
+    margin-top: .5rem;
+    }
     @mixin sm-up {
     margin-right: 2px !important;
     margin-left: 2px !important;

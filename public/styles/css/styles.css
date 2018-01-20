@@ -225,8 +225,19 @@ ul {
   -webkit-column-count: 1;
           column-count: 1;
 }
+@media (min-width: 768px){
+  .latest-monitor{
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+}
 .latest-monitor_card-wrapper {
   margin-top: 30px;
+}
+@media (max-width: 575.99px){
+  .latest-monitor_card{
+    margin-top: .5rem;
+  }
 }
 @media (min-width: 576px){
   .latest-monitor_card{
@@ -268,9 +279,14 @@ footer {
   font-weight: bold;
 }
 
-.footer_content {
-  color: #6091C0;
+.footer_content, .footer_list {
+  display: block;
+  text-align: center;
+  line-height: 2.5rem;
+  padding: 0;
 }
+
+@media (min-width: 768px){}
 
 .footer_social {
   text-align: center;

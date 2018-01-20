@@ -16,8 +16,14 @@ footer {
     text-transform: uppercase;
     font-weight: bold;
   }
-  &_content {
-    color: $ba-l1;
+  &_content, &_list {
+    display: block;
+    text-align: center;
+    line-height: 2.5rem;
+    padding: 0;
+    @mixin md-up {
+
+    }
   }
   &_social {
     text-align: center;
