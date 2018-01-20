@@ -21,7 +21,7 @@
         <p class="card-text">
           {{#if description}} {{truncate description 200}} {{/if}}
           <hr class="my-2"> Added by
-          <a href="/monitors/user/{{user.id}}"> {{user.username}}</a> on {{formatDate date 'YYYY-MM-DD'}}
+          <a href="/user/{{user.id}}"> {{user.username}}</a> on {{formatDate date 'YYYY-MM-DD'}}
         </p>
         <a href="/monitors/show/{{id}}">Read more</a>
         <hr class="my-4">

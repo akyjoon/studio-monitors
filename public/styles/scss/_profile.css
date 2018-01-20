@@ -1,0 +1,84 @@
+.profile {
+  margin-top: 10rem;
+
+  &_user-data {
+    width: 100%;
+    border-top: 1px solid $pc-l1;
+  }
+
+
+
+  &_picture {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    & > img {
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      transform: translateY(-50%)
+    }
+  }
+
+  &_user-name {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: 0 auto;
+    & > h4 {
+    line-height: 225px;
+    }
+  }
+
+  &_menu {
+    width: 100%;
+    text-align: center;
+    &_button:first-child {
+      background-color: $primary-color;
+    }
+    &_button:last-child {
+      background-color: $blue-accent;
+    }
+    &_button {
+      & > h3 {
+        font-size: 1.2rem;
+        font-family: $lato-font;
+        word-wrap: break-word;
+      }
+      &_icon {
+      margin-top: 1rem;
+      }
+
+      &_social {
+        color: white;
+        padding: 1rem;
+        &--one {
+          background-color: #BD081C;
+        }
+        &--two {
+          background-color: #446DB0;
+        }
+        &--three {
+          background-color: #c0deed;
+        }
+        &--four {
+          background-color: #ff7700;
+        }
+      }
+    }
+
+
+    
+  }
+
+  &_monitors_individual {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

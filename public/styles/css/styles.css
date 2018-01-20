@@ -63,9 +63,9 @@ ul {
   width: 30px;
   height: 3px;
   background-color: #fff;
-  transition: -webkit-transform .5s;
-  transition: transform .5s;
-  transition: transform .5s, -webkit-transform .5s;
+  transition: width .5s, -webkit-transform .5s;
+  transition: transform .5s, width .5s;
+  transition: transform .5s, width .5s, -webkit-transform .5s;
 }
 .navigation_mobile-button_upper-line--x {
   -webkit-transform-origin: left bottom;
@@ -101,9 +101,9 @@ ul {
   width: 30px;
   height: 3px;
   background-color: #fff;
-  transition: -webkit-transform .5s;
-  transition: transform .5s;
-  transition: transform .5s, -webkit-transform .5s;
+  transition: width .5s, -webkit-transform .5s;
+  transition: transform .5s, width .5s;
+  transition: transform .5s, width .5s, -webkit-transform .5s;
 }
 .navigation_mobile-button_bottom-line--x {
   -webkit-transform-origin: left top;
@@ -361,4 +361,76 @@ footer {
 }
 .show_monitor_body_desc {
   line-height: 2rem;
+}
+.profile {
+  margin-top: 10rem;
+}
+.profile_user-data {
+  width: 100%;
+  border-top: 1px solid #FFA275;
+}
+.profile_picture {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+.profile_picture > img {
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%)
+}
+.profile_user-name {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: 0 auto;
+}
+.profile_user-name > h4 {
+  line-height: 225px;
+}
+.profile_menu {
+  width: 100%;
+  text-align: center;
+}
+.profile_menu_button:first-child {
+  background-color: #F56520;
+}
+.profile_menu_button:last-child {
+  background-color: #1F609F;
+}
+.profile_menu_button > h3 {
+  font-size: 1.2rem;
+  font-family: 'Lato', sans-serif;
+  word-wrap: break-word;
+}
+.profile_menu_button_icon {
+  margin-top: 1rem;
+}
+.profile_menu_button_social {
+  color: white;
+  padding: 1rem;
+}
+.profile_menu_button_social--one {
+  background-color: #BD081C;
+}
+.profile_menu_button_social--two {
+  background-color: #446DB0;
+}
+.profile_menu_button_social--three {
+  background-color: #c0deed;
+}
+.profile_menu_button_social--four {
+  background-color: #ff7700;
+}
+.profile_monitors_individual {
+  max-width: 100%;
+  margin: 0 auto;
 }

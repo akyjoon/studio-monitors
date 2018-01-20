@@ -89,19 +89,7 @@ router.get('/show/:id', (req, res) => {
       })
     })
 })
-//show users profile
-router.get('/user/:userId', (req,res) => {
-  Monitor.find({
-    user: req.params.userId
-  })
-    .populate('user')
-    
-    .then(monitors => {
-      res.render('monitors/user_monitors', {
-        monitors: monitors
-      })
-    })
-})
+
 
 //Add review
 router.post('/review/:id', (req, res) => {

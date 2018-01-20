@@ -88,7 +88,9 @@ app.use('/monitors', monitors);
 const auth = require('./routes/auth');
 app.use('/auth', auth);
 const dashboard = require('./routes/dashboard');
-app.use('/dashboard', dashboard)
+app.use('/dashboard', dashboard);
+const user = require('./routes/user');
+app.use('/user', user);
 
 //Get Root
 app.get('/', (req, res) => {
