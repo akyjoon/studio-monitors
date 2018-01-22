@@ -30,7 +30,7 @@ ul {
   top: 0;
   z-index: 1000;
   width: 100%;
-  background-color: #6091C0;
+  background-color: #073868;
 }
 @media (min-width: 768px){
   .navigation{
@@ -364,10 +364,29 @@ footer {
 }
 .profile {
   margin-top: 10rem;
+  padding: 0;
+}
+@media (min-width: 576px){
+  .profile{
+    margin-top: 0;
+  }
+}
+@media (min-width: 576px){
+  .profile_user{
+    padding-top: 100px;
+    background-color: #6091C0;
+    height: 100vh;
+    position: fixed;
+  }
 }
 .profile_user-data {
   width: 100%;
   border-top: 1px solid #FFA275;
+}
+@media (min-width: 576px){
+  .profile_user-data{
+    border-top: 0px;
+  }
 }
 .profile_picture {
   position: relative;
@@ -382,7 +401,13 @@ footer {
   margin: 0 auto;
   width: 150px;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%)
+          transform: translateY(-50%);
+}
+@media (min-width: 576px){
+  .profile_picture > img{
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 .profile_user-name {
   text-align: center;
@@ -393,8 +418,18 @@ footer {
   top: 0;
   margin: 0 auto;
 }
+@media (min-width: 576px){
+  .profile_user-name{
+    position: relative;
+  }
+}
 .profile_user-name > h4 {
   line-height: 225px;
+}
+@media (min-width: 576px){
+  .profile_user-name > h4{
+    line-height: 2.5rem;
+  }
 }
 .profile_menu {
   width: 100%;

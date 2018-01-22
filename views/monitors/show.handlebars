@@ -25,41 +25,48 @@
       </div>
     </div>
   </div>
-    <ul id="api"></ul>
-  <div class="row">
-    <div class="col mt-5">
-        <h4>Reviews</h4>
-      {{#each monitor.reviews}}
-      <div class="show_monitor_reviews mt-2">
-        <div class="card">
-          <div class="card-block">
-            <h4 class="card-title">{{reviewUser.username}}</h4>
-            <h6 class="card-subtitle mb-2 text-muted">{{formatDate reviewDate 'MMMM Do YYYY'}}</h6>
-            <p class="card-text">{{reviewBody}}</p>
-            <a href="#" class="card-link">Link</a>
-            <a href="#" class="card-link">Link2</a>
-          </div>
+  <ul id="api"></ul>
+  <div class="row mt-5">
+    <h4>Reviews</h4>
+  </div>
+  {{#each monitor.reviews}}
+  <div class="show_monitor_reviews mt-4">
+    <div class="row">
+      <div class="show_monitor_reviews_avatar col col-sm-4 col-md-3 col-lg-2">
+        <img src="/img/{{reviewUser.avatar}}" alt="">
+      </div>
+      <div class="show_monitor_reviews_body col col-sm-8 col-md-9 col-lg-10">
+        <h4 class="">
+          <a href="/user/{{reviewUser.id}}">
+            {{reviewUser.username}}
+          </a>
+        </h4>
+        <h6 class="mb-2 text-muted">{{formatDate reviewDate 'MMMM Do YYYY'}}</h6>
+        <p class="">{{reviewBody}}</p>
+        <a href="#" class="card-link">Link</a>
+        <a href="#" class="card-link">Link2</a>
+      </div>
+
+    </div>
+  </div>
+  {{/each}}
+<div class="row">
+  <div class="col">
+    <div class="show_monitor_add-review mt-5">
+      <h4>Add Review</h4>
+      {{#if user}}
+      <form method="post" action="/monitors/review/{{monitor.id}}">
+        <div class="form-group">
+          <label for="review-textarea">Add Review</label>
+          <textarea name="reviewBody" id="review-textarea" class="form-control" rows="3"></textarea>
         </div>
-      </div>
-      {{/each}}
+        <button class="btn btn-primary">Submit</button>
+      </form>
+      {{else}}
+      <small>
+        <a href="/auth/login">Login</a> to add review</small>
+      {{/if}}
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <div class="show_monitor_add-review mt-4">
-        <h4>Add Review</h4>
-        {{#if user}}
-        <form method="post" action="/monitors/review/{{monitor.id}}">
-          <div class="form-group">
-            <label for="review-textarea">Add Review</label>
-            <textarea name="reviewBody" id="review-textarea" class="form-control" rows="3"></textarea>
-          </div>
-          <button class="btn btn-primary">Submit</button>
-        </form>
-        {{else}}
-        <small><a href="/auth/login">Login</a> to add review</small>
-        {{/if}}
-      </div>
-    </div>
-  </div>
+</div>
 </div>

@@ -1,6 +1,7 @@
-<div class="container profile">
+<div class="container-fluid profile">
   <div class="row">
-    <div class="col">
+    <div class="profile_user_wrapper col">
+    <div class="col col-sm-4 col-md-3 col-xl-2 profile_user">
       <div class="profile_user-data">
         <div class="profile_picture">
           {{#if monitors.[0].user.avatar}}
@@ -13,7 +14,7 @@
         <div class="profile_menu">
           <div class="row">
             <div class="col-6 profile_menu_button">
-              <i class="fa fa-volume-up fa-4x profile_menu_button_icon"></i> 
+              <i class="fa fa-volume-up fa-4x profile_menu_button_icon"></i>
               <h3>{{monitors.[0].user.username}}s monitors</h3>
             </div>
             <div class="col-6 profile_menu_button">
@@ -22,52 +23,63 @@
             </div>
           </div>
           <div class="row">
-            <div class="col profile_menu_button_social profile_menu_button_social--one"><i class="fa fa-pinterest-p fa-2x"></i> </div>
-            <div class="col profile_menu_button_social profile_menu_button_social--two"><i class="fa fa-facebook fa-2x"></i> </div>
-            <div class="col profile_menu_button_social profile_menu_button_social--three"><i class="fa fa-twitter fa-2x"></i> </div>
-            <div class="col profile_menu_button_social profile_menu_button_social--four"><i class="fa fa-soundcloud fa-2x"></i> </div>
+            <div class="col col-sm-12 profile_menu_button_social profile_menu_button_social--one">
+              <i class="fa fa-pinterest-p fa-2x"></i>
+            </div>
+            <div class="col col-sm-12 profile_menu_button_social profile_menu_button_social--two">
+              <i class="fa fa-facebook fa-2x"></i>
+            </div>
+            <div class="col col-sm-12 profile_menu_button_social profile_menu_button_social--three">
+              <i class="fa fa-twitter fa-2x"></i>
+            </div>
+            <div class="col col-sm-12 profile_menu_button_social profile_menu_button_social--four">
+              <i class="fa fa-soundcloud fa-2x"></i>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="monitors_headline">
-    {{#with monitors.[0]}}
-    <h4>{{user.username}}s monitors
-    </h4>
-    {{/with}}
+    </div>
+    <div class="col col-sm-8 col-md-9 col-xl-10">
+      <div class="monitors_headline">
+        {{#with monitors.[0]}}
+        <h4>{{user.username}}s monitors
+        </h4>
+        {{/with}}
 
-  </div>
+      </div>
 
-  <div class="row card-columns monitors content-block">
-    {{#each monitors}}
-    <div class="col-2 profile_monitors_individual">
-      <div class="card monitors_element p-4">
-        {{#if imgurl}}
-        <a href="/monitors/show/{{id}}">
-          <img src="{{imgurl}}" alt="{{company}} {{model}}" class="card-img-top img-fluid">
-        </a> {{/if}}
-        <div class="card-body">
-          <a href="/monitors/show/{{id}}">
-            <h5 class="card-title mt-3">
-              {{company}} {{model}}
-            </h5>
-          </a>
-          <p class="card-text">
-            {{#if description}} {{truncate description 200}} {{/if}}
-            <hr class="my-2"> Added by
-            <a href="/user/{{user.id}}"> {{user.username}}</a> on {{formatDate date 'YYYY-MM-DD'}}
-          </p>
-          <a href="/monitors/show/{{id}}">Read more</a>
-          <hr class="my-4">
-          <div class="mx-auto">
-            {{#if user}} {{{edit user.id ../user.id id}}} {{/if}}
+      <div class="card-columns monitors content-block">
+        {{#each monitors}}
+        <div class="col-2 profile_monitors_individual">
+          <div class="card monitors_element p-4">
+            {{#if imgurl}}
+            <a href="/monitors/show/{{id}}">
+              <img src="{{imgurl}}" alt="{{company}} {{model}}" class="card-img-top img-fluid">
+            </a> {{/if}}
+            <div class="card-body">
+              <a href="/monitors/show/{{id}}">
+                <h5 class="card-title mt-3">
+                  {{company}} {{model}}
+                </h5>
+              </a>
+              <p class="card-text">
+                {{#if description}} {{truncate description 200}} {{/if}}
+                <hr class="my-2"> Added by
+                <a href="/user/{{user.id}}"> {{user.username}}</a> on {{formatDate date 'YYYY-MM-DD'}}
+              </p>
+              <a href="/monitors/show/{{id}}">Read more</a>
+              <hr class="my-4">
+              <div class="mx-auto">
+                {{#if user}} {{{edit user.id ../user.id id}}} {{/if}}
+              </div>
+            </div>
           </div>
         </div>
+        {{else}}
+        <h1>No monitors to display</h1>
+        {{/each}}
       </div>
     </div>
-    {{else}}
-    <h1>No monitors to display</h1>
-    {{/each}}
   </div>
 </div>

@@ -1,11 +1,27 @@
 .profile {
   margin-top: 10rem;
+  padding: 0;
+  @mixin sm-up {
+    margin-top: 0;
+  }
+  
+
+  &_user {
+    @mixin sm-up {
+    padding-top: 100px;
+    background-color: $ba-l1;
+    height: 100vh;
+    position: fixed;
+    }
+  }
 
   &_user-data {
     width: 100%;
     border-top: 1px solid $pc-l1;
+    @mixin sm-up {
+      border-top: 0px;
+    }
   }
-
 
 
   &_picture {
@@ -19,7 +35,10 @@
       display: block;
       margin: 0 auto;
       width: 150px;
-      transform: translateY(-50%)
+      transform: translateY(-50%);
+      @mixin sm-up {
+        transform: translateY(0);
+      }
     }
   }
 
@@ -31,8 +50,14 @@
     bottom: 0;
     top: 0;
     margin: 0 auto;
+    @mixin sm-up {
+      position: relative;
+    }
     & > h4 {
     line-height: 225px;
+    @mixin sm-up {
+      line-height: 2.5rem;
+    }
     }
   }
 

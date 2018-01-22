@@ -26,7 +26,7 @@
 
         <div class="tab-pane fade show active" id="myMonitors" role="tabpanel" aria-labelledby="my-monitors-tab">
           <div class="card-columns dashboard_monitors content-block">
-            {{#each monitors}}
+            {{#each userMonitor}}
             <div class="card dashboard_monitors_element p-4">
               {{#if imgurl}}
               <a href="/monitors/show/{{id}}">
@@ -42,7 +42,7 @@
                   {{#if description}} {{truncate description 200}} {{/if}}
                   <a href="/monitors/show/{{id}}">Read more</a>
                   <hr class="my-2"> Added by
-                  <a href="/monitors/user/{{user.id}}">{{user.username}}</a> on {{formatDate date 'YYYY-MM-DD'}}
+                  <a href="/user/{{user.id}}">{{user.username}}</a> on {{formatDate date 'YYYY-MM-DD'}}
                 </p>
 
                 <hr class="my-4">
@@ -58,11 +58,39 @@
         </div>
 
         <div class="tab-pane fade" id="myReviews" role="tabpanel" aria-labelledby="my-reviews-tab">
-          {{#each monitors}}
-          {{#each reviews}}
-          {{reviewBody}}
-          {{/each}}
-          {{/each}}
+          {{!-- {{#each userReviews}}
+            {{reviews.[0].reviewBody}}
+          {{/each}} --}}
+          <div class="card-columns dashboard_monitors content-block">
+            {{#each userReviews}}
+            <div class="card dashboard_monitors_element p-4">
+              {{#if imgurl}}
+              <a href="/monitors/show/{{id}}">
+                <img src="{{imgurl}}" alt="{{company}} {{model}}" class="card-img-top img-fluid">
+              </a> {{/if}}
+              <div class="card-body">
+                <a href="/monitors/show/{{id}}">
+                  <h5 class="card-title mt-3">
+                    {{company}} {{model}}
+                  </h5>
+                </a>
+                <p class="card-text">
+                  {{reviews.[0].reviewBody}}
+                  <a href="/monitors/show/{{id}}">Read more</a>
+                  <hr class="my-2"> Added by
+                  <a href="/user/{{user.id}}">{{user.username}}</a> on {{formatDate date 'YYYY-MM-DD'}}
+                </p>
+
+                <hr class="my-4">
+                <div class="mx-auto">
+                  {{#if user}} {{{edit user.id ../user.id id}}} {{/if}}
+                </div>
+              </div>
+            </div>
+            {{else}}
+            <h1>No monitors to display</h1>
+            {{/each}}
+          </div>
         </div>
       </div>
     </div>

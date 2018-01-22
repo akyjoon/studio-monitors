@@ -3,7 +3,7 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  background-color: $ba-l1;
+  background-color: $ba-d1;
   @mixin md-up {
   height: 50px;
   background-color: $blue-accent;
