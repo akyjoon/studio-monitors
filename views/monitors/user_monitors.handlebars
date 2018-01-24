@@ -1,46 +1,46 @@
 <div class="container-fluid profile">
   <div class="row">
     <div class="profile_user_wrapper col">
-    <div class="col col-sm-4 col-md-3 col-xl-2 profile_user">
-      <div class="profile_user-data">
-        <div class="profile_picture">
-          {{#if monitors.[0].user.avatar}}
-          <img src="/img/{{monitors.[0].user.avatar}}" alt="user profile picture"> {{else}}
-          <img src="/img/default-profile.png" alt="default-avatar"> {{/if}}
-        </div>
-        <div class="profile_user-name">
-          <h4>{{monitors.[0].user.username}}</h4>
-        </div>
-        <div class="profile_menu">
-          <div class="row">
-            <div class="col-6 profile_menu_button">
-              <i class="fa fa-volume-up fa-4x profile_menu_button_icon"></i>
-              <h3>{{monitors.[0].user.username}}s monitors</h3>
-            </div>
-            <div class="col-6 profile_menu_button">
-              <i class="fa fa-star-half-o fa-4x profile_menu_button_icon"></i>
-              <h3>{{monitors.[0].user.username}}s reviews</h3>
-            </div>
+      <div class="col col-sm-4 col-md-3 col-xl-2 profile_user">
+        <div class="profile_user-data">
+          <div class="profile_picture">
+            {{#if monitors.[0].user.avatar}}
+            <img src="/img/{{monitors.[0].user.avatar}}" alt="user profile picture"> {{else}}
+            <img src="/img/default-profile.png" alt="default-avatar"> {{/if}}
           </div>
-          <div class="row">
-            <div class="col col-sm-12 profile_menu_button_social profile_menu_button_social--one">
-              <i class="fa fa-pinterest-p fa-2x"></i>
+          <div class="profile_user-name">
+            <h4>{{monitors.[0].user.username}}</h4>
+          </div>
+          <div class="profile_menu">
+            <div class="row profile_menu_button_wrapper">
+              <div class="col-6 profile_menu_button">
+                <i class="fa fa-volume-up fa-4x profile_menu_button_icon"></i>
+                <h3>{{monitors.[0].user.username}}s monitors</h3>
+              </div>
+              <div class="col-6 profile_menu_button">
+                <i class="fa fa-star-half-o fa-4x profile_menu_button_icon"></i>
+                <h3>{{monitors.[0].user.username}}s reviews</h3>
+              </div>
             </div>
-            <div class="col col-sm-12 profile_menu_button_social profile_menu_button_social--two">
-              <i class="fa fa-facebook fa-2x"></i>
-            </div>
-            <div class="col col-sm-12 profile_menu_button_social profile_menu_button_social--three">
-              <i class="fa fa-twitter fa-2x"></i>
-            </div>
-            <div class="col col-sm-12 profile_menu_button_social profile_menu_button_social--four">
-              <i class="fa fa-soundcloud fa-2x"></i>
+            <div class="row profile_menu_button_wrapper">
+              <div class="col col-sm-12 profile_menu_button_social profile_menu_button_social--one">
+                <i class="fa fa-pinterest-p fa-2x"></i>
+              </div>
+              <div class="col col-sm-12 profile_menu_button_social profile_menu_button_social--two">
+                <i class="fa fa-facebook fa-2x"></i>
+              </div>
+              <div class="col col-sm-12 profile_menu_button_social profile_menu_button_social--three">
+                <i class="fa fa-twitter fa-2x"></i>
+              </div>
+              <div class="col col-sm-12 profile_menu_button_social profile_menu_button_social--four">
+                <i class="fa fa-soundcloud fa-2x"></i>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
-    <div class="col col-sm-8 col-md-9 col-xl-10">
+    <div class="col-sm-8 col-md-9 col-xl-10">
       <div class="monitors_headline">
         {{#with monitors.[0]}}
         <h4>{{user.username}}s monitors

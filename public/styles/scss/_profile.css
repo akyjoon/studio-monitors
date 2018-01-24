@@ -1,6 +1,7 @@
 .profile {
   margin-top: 10rem;
   padding: 0;
+  z-index: -1;
   @mixin sm-up {
     margin-top: 0;
   }
@@ -12,6 +13,9 @@
     background-color: $ba-l1;
     height: 100vh;
     position: fixed;
+    }
+    &_wrapper {
+      padding: 0;
     }
   }
 
@@ -96,7 +100,12 @@
           background-color: #ff7700;
         }
       }
+        &_wrapper {
+      margin-right: -15px;
+      margin-left: -15px;
     }
+    }
+
 
 
     

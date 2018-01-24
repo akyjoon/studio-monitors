@@ -1,13 +1,22 @@
 .monitors {
-  column-count: 6;
+  column-count: 1;
+  @mixin sm-up {
+    column-count: 2;
+  }
+  @mixin md-up {
+    column-count: 3;
+  }
+  @mixin lg-up {
+    column-count: 4;
+  }
+  @mixin xl-up {
+    column-count: 5;
+  }
+
   &_element img {
     display: block;
-    max-width: 200px;
     margin: 0 auto;
   }
 
-  &_headline {
-    margin-top: 5rem;
-    width: 100%;
-  }
+
 }
