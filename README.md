@@ -1,5 +1,5 @@
 # studio-monitors
-CRUD practice on studio monitors app
+Web app about studio monitors for audio freaks and music producers, where you can add a new studio monitor, view studio monitors added by other users, and review them.
 
 You can view this work in progress app here: http://www.studiomonitors.review/
 
