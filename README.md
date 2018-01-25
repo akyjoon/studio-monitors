@@ -23,3 +23,8 @@ This is my side project that lets users:
 9. view youtube videos related to the specific studio monitor via Youtube data API (not available yet)
 
 You can view this work in progress app here: http://www.studiomonitors.review/
+
+
+
+2018-01-25 udpates:
+1. flash messages on registration success and errors.
