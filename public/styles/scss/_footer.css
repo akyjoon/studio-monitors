@@ -1,4 +1,5 @@
 footer {
+  margin-top: 20rem;
   background-color: $blue-accent;
   width: 100%;
   font-family: $lato-font;

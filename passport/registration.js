@@ -9,6 +9,7 @@ passport.use('signup', new LocalStrategy({
     passReqToCallback: true
   },
   function (req, username, password, done) {
+    
     findOrCreateUser = function () {
       User.findOne({
         username: username
@@ -19,8 +20,14 @@ passport.use('signup', new LocalStrategy({
         }
         if (user) {
           console.log('User already exists');
-          return done(null, false, req.flash('message', 'User already exists'));
-        } else {
+          return done(null, false, req.flash('error_msg', 'User already exists'));
+        }
+        //validate password strength
+        if (password.length < 8) {
+          console.log('too short');
+          return done(null, false, req.flash('error_msg','password must be over 8 characters'));
+        }
+        else {
           const newUser = new User();
           newUser.username = username;
           newUser.password = createHash(password);
@@ -32,7 +39,7 @@ passport.use('signup', new LocalStrategy({
               throw err;
             }
             console.log('User Registration successful');
-            return done(null, newUser);
+            return done(null, newUser, req.flash('success_msg','Registered successfully'));
           });
         }
       });

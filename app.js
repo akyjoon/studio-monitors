@@ -9,7 +9,7 @@ const expressSession = require('express-session');
 const login = require('./passport/login');
 const signup = require('./passport/registration');
 const flash = require('connect-flash');
-
+const session = require('express-session');
 
 
 const app = express();
@@ -61,6 +61,8 @@ app.use(expressSession({
   resave: true,
   saveUninitialized: true
 }));
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.serializeUser((user, done) => {
@@ -78,6 +80,9 @@ app.use(flash())
 //Global variables
 app.use((req, res, next) => {
   res.locals.user = req.user;
+  res.locals.success_msg = req.flash('success_msg')
+  res.locals.error_msg = req.flash('error_msg')
+  res.locals.error = req.flash('error')
   next();
 })
 

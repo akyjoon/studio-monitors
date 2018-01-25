@@ -2,7 +2,9 @@
   font-family: $mont-font;
   box-sizing: border-box;
 }
-
+.alert {
+  margin-top: 50px;
+}
 a {
   color: $primary-color;
   

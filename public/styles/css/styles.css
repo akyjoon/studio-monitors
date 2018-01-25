@@ -3,11 +3,12 @@
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
 }
-
+.alert {
+  margin-top: 50px;
+}
 a {
   color: #F56520;
 }
-
 a:hover {
   text-decoration: none;
 }
@@ -262,6 +263,7 @@ ul {
   background-color: white;
 }
 footer {
+  margin-top: 20rem;
   background-color: #1F609F;
   width: 100%;
   font-family: 'Lato', sans-serif;
